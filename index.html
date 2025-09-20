@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geräteerkennung</title>
+    <script>
+        function detectDevice() {
+            if (/Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                window.location.href = "smartphone.html";
+            } else {
+                window.location.href = "pc.html";
+            }
+        }
+    </script>
+</head>
+<body onload="detectDevice()">
+    <h1>Geräteerkennung</h1>
+    <p>Sie werden weitergeleitet...</p>
+    <p> Geräteüberprüfung sorgt dafür das alle Bilder richtig angezeigt werden</p>
+</body>
+</html>
