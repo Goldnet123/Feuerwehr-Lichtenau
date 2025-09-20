@@ -1,43 +1,22 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Geräteerkennung</title>
-<script>
-    function detectDevice() {
-        // Weiterleitung (aktuell nur auf pc.html, kann angepasst werden)
-        window.location.href = "pc.html";
-    }
-
-    // Dark/Light Mode automatisch beim Laden setzen
-    function applyMode() {
-        if (localStorage.getItem("mode") === "dark") {
-            document.body.classList.add("dark-mode");
-        }
-    }
-</script>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 20px;
-        background-color: #f4f4f4;
-        color: #000;
-        text-align: center;
-        transition: background-color 0.3s, color 0.3s;
-    }
-
-    /* Dark Mode */
-    body.dark-mode {
-        background-color: #121212;
-        color: white;
-    }
-</style>
-</head>
-<body onload="applyMode(); detectDevice();">
-    <h1>Geräteerkennung</h1>
-    <p>Sie werden weitergeleitet...</p>
-    <p>Geräteüberprüfung sorgt dafür, dass alle Bilder richtig angezeigt werden</p>
-</body>
+<!DOCTYPE html>    
+<html lang="de">    
+<head>    
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Geräteerkennung</title>    
+    <script>    
+        function detectDevice() {    
+            if (/Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {    
+                window.location.href = "pc.html";    
+            } else {    
+                window.location.href = "pc.html";    
+            }    
+        }    
+    </script>    
+</head>    
+<body onload="detectDevice()">    
+    <h1>Geräteerkennung</h1>    
+    <p>Sie werden weitergeleitet...</p>    
+    <p> Geräteüberprüfung sorgt dafür das alle Bilder richtig angezeigt werden</p>    
+</body>    
 </html>
