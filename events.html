@@ -63,10 +63,10 @@
             color: white;
         }
         body.dark-mode header {
-            background-color: #7a1f1f;
+            background-color: #8b0000;
         }
         body.dark-mode nav {
-            background-color: #5a1212;
+            background-color: #600000;
         }
         body.dark-mode .section {
             background: #1e1e1e;
@@ -108,16 +108,16 @@
         const body = document.body;
 
         // gespeicherten Modus laden
-        if (localStorage.getItem("theme") === "dark") {
+        if (localStorage.getItem("mode") === "dark") {
             body.classList.add("dark-mode");
         }
 
         toggleButton.addEventListener("click", () => {
             body.classList.toggle("dark-mode");
             if (body.classList.contains("dark-mode")) {
-                localStorage.setItem("theme", "dark");
+                localStorage.setItem("mode", "dark");
             } else {
-                localStorage.setItem("theme", "light");
+                localStorage.setItem("mode", "light");
             }
         });
     </script>
