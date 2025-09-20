@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Freiwillige Feuerwehr Lichtenau</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+            color: black;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        header {
+            background-color: #d32f2f;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            transition: background-color 0.3s;
+        }
+        nav {
+            background-color: #b71c1c;
+            padding: 10px 0;
+            transition: background-color 0.3s;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+            font-size: 18px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #ff5252;
+            border-radius: 5px;
+            transform: scale(1.1);
+        }
+        .content {
+            padding: 20px;
+        }
+        .section {
+            background: white;
+            margin: 20px auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        ul {
+            text-align: left;
+            padding-left: 40px;
+        }
+
+        /* Dark Mode */
+        body.dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+        body.dark-mode header {
+            background-color: #7a1f1f;
+        }
+        body.dark-mode nav {
+            background-color: #5a1212;
+        }
+        body.dark-mode .section {
+            background: #1e1e1e;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Freiwillige Feuerwehr Lichtenau
+    </header>
+    <nav>
+        <a href="geräteüberprüfung.html">Startseite</a>
+        <a href="info.html">Info</a>
+        <a href="galerie.html">Galerie</a>
+        <a href="letzte-einsätze.html">Letzte Einsätze</a>
+        <a href="events.html">Events</a>
+    </nav>
+
+    <!-- Dark/Light Mode Button -->
+    <div style="text-align: left; width: 100%; padding-left: 10px; margin-top: 10px;">
+        <button id="modeToggle">Dark/Light</button>
+    </div>
+
+    <div class="content">
+        <div class="section">
+            <h2>Unsere kommenden Events</h2>
+            <p>Hier findest du eine Übersicht über unsere bevorstehenden Veranstaltungen.</p>
+            <ul>
+                <li><strong>15. September 2025, 18:00:</strong> Sommerfest der Feuerwehr am Gerätehaus</li>
+                <li><strong>3. Oktober 2025, 10:00:</strong> Tag der offenen Tür</li>
+                <li><strong>24. Dezember 2025, 16:00:</strong> Weihnachtsmarkt-Stand der Feuerwehr</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const toggleButton = document.getElementById("modeToggle");
+        const body = document.body;
+
+        // gespeicherten Modus laden
+        if (localStorage.getItem("theme") === "dark") {
+            body.classList.add("dark-mode");
+        }
+
+        toggleButton.addEventListener("click", () => {
+            body.classList.toggle("dark-mode");
+            if (body.classList.contains("dark-mode")) {
+                localStorage.setItem("theme", "dark");
+            } else {
+                localStorage.setItem("theme", "light");
+            }
+        });
+    </script>
+</body>
+</html>
